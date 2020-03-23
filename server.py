@@ -14,6 +14,7 @@ len_of_files = 0
 
 
 #Receiving Data
+@app.route("/")
 @app.route("/first_song", methods = ['POST', 'GET'])
 def first_song():
     global file_names, file_number, len_of_files
@@ -22,7 +23,7 @@ def first_song():
         #f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
         #f = request.files['file2']
         #f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
-        data = request.json
+        data = request.get_json()
         print("Json File received")
         print(data)
         return "0"
@@ -58,6 +59,6 @@ def next_button():
         return "Some Error Occurred"
 
 
-file_names = send_file.send_files.run()
-print(file_names)
+#file_names = send_file.send_files.run()
+#print(file_names)
 app.run(debug = True)
