@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:paddingTop="16dp"
+        android:id="@+id/gyroscope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Gyroscope" />
+
+    <TextView
+        android:id="@+id/gyroscope_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/gyroscope_y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/gyroscope_z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:paddingTop="16dp"
+        android:id="@+id/gravity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Gravity" />
+
+    <TextView
+        android:id="@+id/gravity_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/gravity_y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/gravity_z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:paddingTop="16dp"
+        android:id="@+id/accelerometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Accelerometer" />
+
+    <TextView
+        android:id="@+id/accelerometer_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/accelerometer_y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/accelerometer_z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0" />
+
+</LinearLayout>
+
