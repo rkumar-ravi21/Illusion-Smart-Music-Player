@@ -2,6 +2,7 @@ import send_file
 import os
 from flask import Flask, request, send_from_directory
 from werkzeug import secure_filename
+import create_file
 
 
 #Creating Flask App
@@ -24,8 +25,7 @@ def first_song():
         #f = request.files['file2']
         #f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
         data = request.get_json()
-        print("Json File received")
-        print(data)
+        create_file.create.create_csv(data)
         return "0"
         #file_names = send_file.send_files.run()
         #len_of_files = len(file_names)
@@ -59,6 +59,7 @@ def next_button():
         return "Some Error Occurred"
 
 
+
 #file_names = send_file.send_files.run()
 #print(file_names)
-app.run(debug = True)
+app.run()#host='0.0.0.0', debug = True)
