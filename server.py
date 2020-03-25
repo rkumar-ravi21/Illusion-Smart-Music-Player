@@ -62,4 +62,4 @@ def next_button():
 
 #file_names = send_file.send_files.run()
 #print(file_names)
-app.run()#host='0.0.0.0', debug = True)
+app.run(host='0.0.0.0', debug = True)
