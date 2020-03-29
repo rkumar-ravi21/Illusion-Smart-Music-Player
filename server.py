@@ -1,14 +1,14 @@
-import send_file
+import send_files
 import os
-from flask import Flask, request, send_from_directory
-from werkzeug import secure_filename
+from flask import Flask, request, send_from_directory, send_file
+#from werkzeug import secure_filename
 import create_file
 
 
 #Creating Flask App
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = "//home//ravi//PycharmProjects//Send_Music"
-app.config['MUSIC_FOLDER'] = "//home//ravi//PycharmProjects//Music_Tempo//Database"
+#app.config['UPLOAD_FOLDER'] = "//home//ravi//PycharmProjects//Send_Music"
+#app.config['MUSIC_FOLDER'] = "//home//ravi//PycharmProjects//Music_Tempo//Database"
 file_names = []
 file_number = 0
 len_of_files = 0
@@ -26,12 +26,13 @@ def first_song():
         #f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
         data = request.get_json()
         create_file.create.create_csv(data)
-        return "0"
-        #file_names = send_file.send_files.run()
-        #len_of_files = len(file_names)
-        #mn = file_names[file_number]
-        #mn = mn.rpartition('/')[-1]
-        #send_from_directory(app.config['MUSIC_FOLDER'], filename = mn, as_attachment = True)   #open file and return binary data-------------------------------------------
+        file_names = send_files.send_files.run()
+        len_of_files = len(file_names)
+        fn = file_names[file_number]
+        print("Filename: "+ filename)
+        mn = fn.rpartition('/')[-1]
+        print("Music Name: "+ mn)
+        return send_file(fn, attachment_filename=mn, as_attachment=True)  #open file and return binary data-------------------------------------------
         #return "File Send"
     else:
         print("Some error occurred in first song button")
