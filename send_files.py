@@ -3,7 +3,8 @@ from glob import glob
 import activity_prediction
 
 
-class send_files:
+
+class send_music_files:
 
 	@staticmethod
 	def heart():
@@ -21,6 +22,8 @@ class send_files:
 		else:
 			hr_code = 1
 
+		print("Heart Rate: "+ str(heart_rate))
+		print("Heart Rate Code: "+ str(hr_code) )
 		return hr_code
 
 	@staticmethod
@@ -43,6 +46,7 @@ class send_files:
 		f_activity_data = open("activity_number.txt", "r+")
 		n = f_activity_data.readline()
 		n = int(n)
+		#print("Activity Number: "+ str(n) )
 		f_activity_data.close()
 		return n
 
@@ -71,14 +75,14 @@ class send_files:
 
 	@staticmethod
 	def run():
-		hr_code = send_files.heart()
-		music_data, music_path = send_files.music()
+		hr_code = send_music_files.heart()
+		music_data, music_path = send_music_files.music()
 		music_path = music_path.split()
 		music_path = music_path[0]
-		a_n = send_files.activity_number()
-		files = send_files.file_names(music_path, music_data, hr_code, a_n)
+		a_n = send_music_files.activity_number()
+		#a_n = 1
+		files = send_music_files.file_names(music_path, music_data, hr_code, a_n)
 		return files
 
-#sf = send_files()
-#x = sf.run()
-#print(x[0])
+#smf = send_music_files()
+#x = smf.run()

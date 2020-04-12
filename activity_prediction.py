@@ -2,9 +2,14 @@ import numpy as np
 import pandas as pd
 import pickle
 
+
 from scipy.stats import median_absolute_deviation
 from scipy.stats import iqr
 from scipy.stats import entropy
+
+#import keras, keras_applications, keras_preprocessing
+#from keras.models import load_model
+from tensorflow import keras
 
 
 class Activity:
@@ -249,7 +254,8 @@ class Activity:
 		test_data = np.asarray(l)
 		test_data = np.reshape(test_data, (1,-1))
 		predictions = classifier_model.predict_classes(test_data)
-		x = predictions[0][0]
+		x = predictions[0]
+		print("Activity Number: "+ str(x))
 		f = open("activity_number.txt", "w")
 		f.write(str(x))
 		f.close()
@@ -264,4 +270,4 @@ class Activity:
 		prediction_list = Activity.list_creation(data)
 		Activity.predict_and_save(prediction_list)
 
-#rc = activity()
+#Activity.run()

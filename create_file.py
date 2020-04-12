@@ -7,6 +7,11 @@ class create:
 		data = data['data']
 		fields = ['body_acc_x', 'body_acc_y', 'body_acc_z', 'gravity_acc_x', 'gravity_acc_y', 'gravity_acc_z', 'body_gyro_x', 'body_gyro_y', 'body_gyro_z']
 		rows = []
+		
+		heart_rate = data[0]
+		heart_rate = heart_rate['heartRate']
+		heart_rate = heart_rate[0]
+		data.pop(0)
 
 		for val in data:
 			temp_list = []
@@ -27,3 +32,7 @@ class create:
 		csv_writer.writerows(rows)
 		f.close()
 		print("CSV File Created")
+		f = open('heart_rate.txt', 'w')
+		f.write(heart_rate)
+		f.close()
+		print("Heart Rate File Created")
