@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MiBand2Connect</string>
+    <string name="hardware_revision">Hardware revision</string>
+    <string name="software_revision">Software revision</string>
+    <string name="serial_number">Serial number</string>
+    <string name="device_name">Device name</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="cancel">Cancel</string>
+    <string name="sensor_button">First Song</string>
+    <string name="nextSongButton">Next Song</string>
+    <string name="baseUrlTextView">Enter Base URL</string>
+    <string name="baseURLExample">eg. http://10.42.0.1:5000 eg.http://5d3b10a1.ngrok.io</string>
+
+</resources>
