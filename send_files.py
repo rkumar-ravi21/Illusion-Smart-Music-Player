@@ -53,19 +53,52 @@ class send_music_files:
 	@staticmethod
 	def file_names(music_path, music_data, hr_code, a_n):
 		f = []
-		if( (hr_code==0 and a_n==0) or (hr_code==0 and a_n==1) or (hr_code==1 and a_n==0)):
-			for name, hr in music_data.items():
-				if(hr<100.0):
-					f.append(music_path+name)
-
-		elif( (hr_code==2 and a_n==1) or (hr_code==2 and a_n==2) ):
+		if( (hr_code==2 and a_n==2) ):
 			for name, hr in music_data.items():
 				if(hr>150.0):
 					f.append(music_path+name)
 
-		elif( (hr_code==0 and a_n==2) or (hr_code==1 and a_n==1) or (hr_code==1 and a_n==2) or (hr_code==2 and a_n==0) ):
+		elif ( (hr_code == 1 and a_n == 1) ):
 			for name, hr in music_data.items():
-				if(hr>=100.0 and hr<=150.0):
+				if(hr>=120.0 and hr<=130.0):
+					f.append(music_path+name)
+
+		elif ( (hr_code == 0 and a_n == 0) ):
+			for name, hr in music_data.items():
+				if(hr<=100.0):
+					f.append(music_path+name)
+			f.reverse()
+
+		elif ( (hr_code == 2 and a_n == 1) ):
+			for name, hr in music_data.items():
+				if(hr>130.0):
+					f.append(music_path+name)
+
+		elif ( (hr_code == 1 and a_n == 2) ):
+			for name, hr in music_data.items():
+				if(hr>130.0):
+					f.append(music_path+name)
+
+		elif ( (hr_code == 1 and a_n == 0) ):
+			for name, hr in music_data.items():
+				if(hr<120.0):
+					f.append(music_path+name)
+			f.reverse()
+
+		elif ( (hr_code == 0 and a_n == 1) ):
+			for name, hr in music_data.items():
+				if(hr<120.0):
+					f.append(music_path+name)
+			f.reverse()
+
+		elif( (hr_code == 2 and a_n == 0) ):
+			for name, hr in music_data.items():
+				if(hr>100.0 and hr<150.0):
+					f.append(music_path+name)
+
+		elif( (hr_code == 0 and a_n == 2) ):
+			for name, hr in music_data.items():
+				if(hr>100.0 and hr<150.0):
 					f.append(music_path+name)
 
 		else:
@@ -80,9 +113,11 @@ class send_music_files:
 		music_path = music_path.split()
 		music_path = music_path[0]
 		a_n = send_music_files.activity_number()
-		#a_n = 1
+		#a_n = 2
+		#hr_code = 0
 		files = send_music_files.file_names(music_path, music_data, hr_code, a_n)
 		return files
 
 #smf = send_music_files()
 #x = smf.run()
+#print(x)
